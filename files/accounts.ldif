@@ -1,0 +1,110 @@
+dn: dc=XXXXX
+dc: XXXXX
+objectClass: dcObject
+objectClass: top
+objectClass: organization
+o: XXXXX
+
+dn: ou=users,dc=XXXXX
+objectClass: top
+objectClass: organizationalUnit
+
+ou: users
+
+dn: cn=mbadley,ou=users,dc=XXXXX
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: posixAccount
+objectClass: pwmUser
+objectClass: shadowAccount
+objectClass: ldapPublicKey
+objectClass: hostObject
+objectClass: authorizedServiceObject
+displayName: Malcolm Badley
+givenName: Malcolm
+shadowLastChange: 0
+userPassword:: XXXX
+ =
+uid: mbadley
+mail: malcolm.badey@YYYY.com
+uidNumber: 1001
+cn: mbadley
+loginShell: /bin/bash
+sshPublicKey:: ZZZZZZZ
+host: *
+gidNumber: 1000
+o: BJSS
+homeDirectory: /home/mbadley
+sn: Badley
+authorizedService: *
+
+dn: ou=groups,dc=XXXXX
+objectClass: top
+objectClass: organizationalUnit
+ou: groups
+
+dn: cn=admins,ou=groups,dc=XXXXX
+objectClass: groupOfUniqueNames
+objectClass: top
+uniqueMember: cn=mbadley,ou=users,dc=XXXXX
+
+dn: ou=sudo,dc=XXXXX
+objectClass: top
+objectClass: organizationalUnit
+ou: sudo
+
+dn: cn=mbadley,ou=sudo,dc=XXXXX
+objectClass: top
+objectClass: sudoRole
+cn: mbadley
+sudoCommand: ALL
+sudoHost: *
+sudoUser: mbadley
+
+dn: ou=services,dc=XXXXX
+objectClass: top
+objectClass: organizationalUnit
+ou: services
+
+dn: cn=openvpn,ou=services,dc=XXXXX
+objectClass: top
+objectClass: person
+cn: openvpn
+sn: Service Account
+userPassword:: XXXX
+
+dn: cn=pwm,ou=services,dc=XXXXX
+objectClass: top
+objectClass: person
+cn: pwm
+sn: Service Account
+userPassword:: XXXX
+ Q==
+
+dn: cn=gitlab,ou=services,dc=XXXXX
+objectClass: top
+objectClass: person
+cn: gitlab
+sn: Service Account
+userPassword:: XXXX
+ Q==
+
+dn: cn=zabbix,ou=services,dc=XXXXX
+objectClass: top
+objectClass: person
+cn: zabbix
+sn: Service Account
+userPassword:: XXXX
+ Q==
+
+dn: cn=sssd,ou=services,dc=XXXXX
+objectClass: top
+objectClass: person
+cn: sssd
+sn: Service Account
+userPassword: XXXX
+
+
+
